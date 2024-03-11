@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const backendUrl = "http://localhost:3001";
+// const backendUrl = "http://localhost:3001"; local url
+const backendUrl = "https://feelix-backend-rho.vercel.app/" // Prod Url
 
 const ChatContext = createContext();
 
