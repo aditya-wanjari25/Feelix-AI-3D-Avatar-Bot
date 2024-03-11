@@ -25,7 +25,7 @@ app.use(express.json());
 // }));
 
 var corsOptions = {
-  origin: 'https://feelix-ai-companion.vercel.app/',
+  origin: 'https://feelix-ai-companion.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
