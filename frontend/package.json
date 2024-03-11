@@ -17,7 +17,7 @@
     "@types/three": "0.152.1",
     "axios": "^1.6.7",
     "leva": "^0.9.35",
-    "mic-recorder-to-mp3": "github:NikolaBalaban/mic-recorder-to-mp3",
+    "mic-recorder-to-mp3": "https://github.com/NikolaBalaban/mic-recorder-to-mp3.git",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-speech-recognition": "^3.10.0",
