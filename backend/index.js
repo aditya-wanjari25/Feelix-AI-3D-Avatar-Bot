@@ -20,11 +20,11 @@ const app = express();
 app.use(express.json({extended: false}));
 
 // app.use(cors()); 
-app.use(cors({
-  origin: 'https://feelix-ai-companion.vercel.app',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+// app.use(cors({
+//   origin: 'https://feelix-ai-companion.vercel.app',
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type'],
+// }));
 
 // var corsOptions = {
 //   origin: 'https://feelix-ai-companion.vercel.app',
@@ -44,7 +44,12 @@ app.use(cors({
 //         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); 
 //     return res.status(200).json({});   
 //   }   next(); });
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://feelix-ai-companion.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 
 const port = process.env.PORT || 3001;
