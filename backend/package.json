@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js --ext js",
-    "build": "yarn build"
+    "build": "yarn run compile"
   },
   "author": "Team 11 Papers2Product",
   "dependencies": {
