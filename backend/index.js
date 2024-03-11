@@ -5,6 +5,7 @@ import voice from "elevenlabs-node";
 import express from "express";
 import { promises as fs } from "fs";
 import OpenAI from "openai";
+
 dotenv.config();
 
 const openai = new OpenAI({
@@ -16,13 +17,14 @@ const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
 const voiceID = "ZRpnli4KWS7hpQto3k1N";
 
 const app = express();
-app.use(express.json());
-app.use(cors()); 
-// app.use(cors({
-//   origin: 'https://feelix-ai-companion.vercel.app', 
-//   methods: ['GET', 'POST'], 
-//   allowedHeaders: ['Content-Type'], 
-// }));
+app.use(express.json({extended: false}));
+
+// app.use(cors()); 
+app.use(cors({
+  origin: 'https://feelix-ai-companion.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 
 // var corsOptions = {
 //   origin: 'https://feelix-ai-companion.vercel.app',
@@ -35,13 +37,13 @@ app.use(cors());
 // app.use(cors(corsOptions));
 
 
-app.use((req, res, next) => {  
-   res.header('Access-Control-Allow-Origin', '*'); 
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-       if (req.method === 'OPTIONS') {     
-        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); 
-    return res.status(200).json({});   
-  }   next(); });
+// app.use((req, res, next) => {  
+//    res.header('Access-Control-Allow-Origin', '*'); 
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+//        if (req.method === 'OPTIONS') {     
+//         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); 
+//     return res.status(200).json({});   
+//   }   next(); });
 
 
 
