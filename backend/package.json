@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js --ext js",
-    "build": "yarn run compile"
+    "dev": "nodemon index.js --ext js"
   },
   "author": "Team 11 Papers2Product",
   "dependencies": {
