@@ -19,7 +19,9 @@ const app = express();
 app.use(express.json());
 // app.use(cors()); //localhost
 app.use(cors({
-  origin: 'https://feelix-ai-companion.vercel.app', // Replace with your frontend's URL
+  origin: 'https://feelix-ai-companion.vercel.app', 
+  methods: ['GET', 'POST'], 
+  allowedHeaders: ['Content-Type'], 
 }));
 
 
