@@ -44,12 +44,12 @@ app.use(express.json({extended: false}));
 //         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); 
 //     return res.status(200).json({});   
 //   }   next(); });
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://feelix-ai-companion.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://feelix-ai-companion.vercel.app');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+//   next();
+// });
 
 
 const port = process.env.PORT || 3001;
