@@ -22,7 +22,7 @@ const corsOptions = {
   origin: '*',
   optionsSuccessStatus: 200, // For legacy browser support
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: '*'
 };
 
 app.options('*',cors())
@@ -141,7 +141,7 @@ const headers =(req,res,next) =>{
   res.setHeader('Access-Control-Allow-Origin', '*');
   // res.setHeader('Access-Control-Allow-Origin', origin)
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
-	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+	res.setHeader('Access-Control-Allow-Headers', '*')
 	res.setHeader('Access-Control-Allow-Credentials', true)
 	next()
 }
