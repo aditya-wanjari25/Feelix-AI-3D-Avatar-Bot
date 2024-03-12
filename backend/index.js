@@ -76,6 +76,10 @@ app.use(cors());
 
 const port = process.env.PORT || 3001;
 
+app.options('/chat', cors())
+app.options('/voices', cors())
+
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
