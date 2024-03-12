@@ -42,6 +42,7 @@ app.use(express.json({extended: false}));
 //   next();
 // });
 app.use(cors()); 
+const cors = require('cors')
 // app.use(cors({
 //   origin: 'https://feelix-ai-companion.vercel.app'
 //   // methods: ['GET', 'POST'],
@@ -120,7 +121,7 @@ const lipSyncMessage = async (message) => {
   console.log(`Lip sync done in ${new Date().getTime() - time}ms`);
 };
 
-app.post("/chat", async (req, res) => {
+app.post("/chat", cors(),async (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Methods', '*');
   const userMessage = req.body.message;
