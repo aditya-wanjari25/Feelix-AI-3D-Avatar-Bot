@@ -42,7 +42,7 @@ app.use(express.json({extended: false}));
 //   next();
 // });
 app.use(cors()); 
-const cors = require('cors')
+// const cors = require('cors')
 // app.use(cors({
 //   origin: 'https://feelix-ai-companion.vercel.app'
 //   // methods: ['GET', 'POST'],
