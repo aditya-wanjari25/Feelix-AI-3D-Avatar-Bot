@@ -41,7 +41,6 @@ app.use(express.json({extended: false}));
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //   next();
 // });
-app.use(cors()); 
 // const cors = require('cors')
 // app.use(cors({
 //   origin: 'https://feelix-ai-companion.vercel.app'
@@ -49,12 +48,13 @@ app.use(cors());
 //   // allowedHeaders: ['Content-Type'],
 // }));
 
-// var corsOptions = {
-//   origin: 'https://feelix-ai-companion.vercel.app',
-//   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   optionsSuccessStatus: 200
-// };
+var corsOptions = {
+  origin: 'https://feelix-ai-companion.vercel.app',
+  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+  preflightContinue:true
+};
+
+app.use(cors(corsOptions)); 
 
 
 // app.use(cors(corsOptions));
@@ -122,8 +122,9 @@ const lipSyncMessage = async (message) => {
 };
 
 app.post("/chat", cors(),async (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
-  res.set('Access-Control-Allow-Methods', '*');
+  const origin = req.headers.origin = "https://feelix-ai-companion.vercel.app"
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
   const userMessage = req.body.message;
   if (!userMessage) {
     res.send({
