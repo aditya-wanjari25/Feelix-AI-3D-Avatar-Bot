@@ -18,7 +18,13 @@ const voiceID = "ZRpnli4KWS7hpQto3k1N";
 
 const app = express();
 app.use(express.json({extended: false}));
-
+var corsOptions = {
+  origin: 'https://feelix-ai-companion.vercel.app',
+  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+  preflightContinue:true
+};
+app.options('*',cors())
+app.use(cors(corsOptions)); 
 // app.get('/cors', (req, res) => {
 //   res.set('Access-Control-Allow-Origin', '*');
 //   res.send({ "msg": "This has CORS enabled 🎈" })
@@ -48,13 +54,8 @@ app.use(express.json({extended: false}));
 //   // allowedHeaders: ['Content-Type'],
 // }));
 
-var corsOptions = {
-  origin: 'https://feelix-ai-companion.vercel.app',
-  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-  preflightContinue:true
-};
 
-app.use(cors(corsOptions)); 
+
 
 
 // app.use(cors(corsOptions));
