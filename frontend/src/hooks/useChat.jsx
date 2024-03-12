@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 // const backendUrl = "http://localhost:3001"; //local url
 // const backendUrl = "https://feelix-backend-rho.vercel.app"; // prod url
-const backendUrl = "https://plankton-app-wrndz.ondigitalocean.app"; // prod url
+const backendUrl = "http://3.140.197.139:3001"; // prod url
 
 
 const ChatContext = createContext();
