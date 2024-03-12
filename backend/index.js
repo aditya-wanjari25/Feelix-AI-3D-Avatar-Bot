@@ -19,13 +19,20 @@ const voiceID = "ZRpnli4KWS7hpQto3k1N";
 const app = express();
 app.use(express.json({extended: false}));
 
+// app.get('/cors', (req, res) => {
+//   res.set('Access-Control-Allow-Origin', '*');
+//   res.send({ "msg": "This has CORS enabled 🎈" })
+//   })
+// const response = await fetch('http://localhost:8080/cors', { mode: 'cors' });
 
-app.use((req,res, next)=>{
-  res.setHeader('Access-Control-Allow-Origin',"https://feelix-ai-companion.vercel.app");
-  res.setHeader('Access-Control-Allow-Headers',"*");
-  res.header('Access-Control-Allow-Credentials', true);
-  next();
-});
+
+
+// app.use((req,res, next)=>{
+//   res.setHeader('Access-Control-Allow-Origin',"https://feelix-ai-companion.vercel.app");
+//   res.setHeader('Access-Control-Allow-Headers',"*");
+//   res.header('Access-Control-Allow-Credentials', true);
+//   next();
+// });
 
 // app.use(cors({ origin: true }));
 
@@ -34,7 +41,7 @@ app.use((req,res, next)=>{
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //   next();
 // });
-// app.use(cors()); 
+app.use(cors()); 
 // app.use(cors({
 //   origin: 'https://feelix-ai-companion.vercel.app'
 //   // methods: ['GET', 'POST'],
@@ -110,6 +117,7 @@ const lipSyncMessage = async (message) => {
 };
 
 app.post("/chat", async (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
   const userMessage = req.body.message;
   if (!userMessage) {
     res.send({
