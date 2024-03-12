@@ -4,6 +4,7 @@
   "description": "Backend for the virtual girlfriend app",
   "main": "index.js",
   "type": "module",
+  "proxy": "https://feelix-ai-companion.vercel.app",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js --ext js"
