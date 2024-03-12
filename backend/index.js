@@ -20,11 +20,11 @@ const app = express();
 app.use(express.json({extended: false}));
 
 // app.use(cors()); 
-// app.use(cors({
-//   origin: 'https://feelix-ai-companion.vercel.app',
-//   methods: ['GET', 'POST'],
-//   allowedHeaders: ['Content-Type'],
-// }));
+app.use(cors({
+  origin: 'https://feelix-ai-companion.vercel.app'
+  // methods: ['GET', 'POST'],
+  // allowedHeaders: ['Content-Type'],
+}));
 
 // var corsOptions = {
 //   origin: 'https://feelix-ai-companion.vercel.app',
