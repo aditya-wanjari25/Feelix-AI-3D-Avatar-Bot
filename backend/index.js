@@ -121,14 +121,25 @@ const lipSyncMessage = async (message) => {
   // -r phonetic is faster but less accurate
   console.log(`Lip sync done in ${new Date().getTime() - time}ms`);
 };
-
+app.get("/health",(req,res)=>{ res.send({
+  messages: [
+    {
+      text: "Please my dear, don't forget to add your API keys!",
+      facialExpression: "angry",
+      animation: "Angry",
+    },
+    
+  ],
+})
+return
+;})
 app.post("/chat", cors(),async (req, res) => {
   const origin = req.headers.origin = "https://feelix-ai-companion.vercel.app"
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', '*');
   const userMessage = req.body.message;
   if (!userMessage) {
-    res.send({
+    res.send({  
       messages: [
         {
           text: "Hey Dear... How was your day?",
