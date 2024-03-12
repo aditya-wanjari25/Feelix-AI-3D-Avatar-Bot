@@ -122,6 +122,7 @@ const lipSyncMessage = async (message) => {
 
 app.post("/chat", async (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', '*');
   const userMessage = req.body.message;
   if (!userMessage) {
     res.send({
