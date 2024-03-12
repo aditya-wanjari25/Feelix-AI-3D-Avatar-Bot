@@ -133,10 +133,19 @@ app.get("/health",(req,res)=>{ res.send({
 })
 return
 ;})
-app.post("/chat", cors(),async (req, res) => {
+const headers =(req,res,next) =>{
   const origin = req.headers.origin = "https://feelix-ai-companion.vercel.app"
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', '*');
+  // res.setHeader('Access-Control-Allow-Origin', origin)
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+	res.setHeader('Access-Control-Allow-Credentials', true)
+	next()
+}
+
+
+app.post("/chat", cors(),headers,async (req, res) => {
+
   const userMessage = req.body.message;
   if (!userMessage) {
     res.send({  
