@@ -12,7 +12,6 @@ export const ChatProvider = ({ children }) => {
     setLoading(true);
     const data = await fetch(`${backendUrl}/chat`, {
       method: "POST",
-       mode: 'no-cors',
 
       headers: {
         "Content-Type": "application/json",
