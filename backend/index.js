@@ -17,14 +17,17 @@ const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
 const voiceID = "ZRpnli4KWS7hpQto3k1N";
 
 const app = express();
-app.use(express.json({extended: false}));
-var corsOptions = {
-  origin: 'https://feelix-ai-companion.vercel.app',
-  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-  preflightContinue:true
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200, // For legacy browser support
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
+
 app.options('*',cors())
 app.use(cors(corsOptions)); 
+app.use(express.json({extended: false}));
 // app.get('/cors', (req, res) => {
 //   res.set('Access-Control-Allow-Origin', '*');
 //   res.send({ "msg": "This has CORS enabled 🎈" })
