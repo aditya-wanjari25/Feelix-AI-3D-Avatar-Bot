@@ -19,7 +19,15 @@ const voiceID = "ZRpnli4KWS7hpQto3k1N";
 const app = express();
 app.use(express.json({extended: false}));
 
-app.use(cors({ origin: true }));
+
+app.use((req,res, next)=>{
+  res.setHeader('Access-Control-Allow-Origin',"https://feelix-ai-companion.vercel.app");
+  res.setHeader('Access-Control-Allow-Headers',"*");
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
+
+// app.use(cors({ origin: true }));
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
