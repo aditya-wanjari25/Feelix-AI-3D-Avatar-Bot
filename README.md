@@ -12,8 +12,10 @@ Feelix is built to help seniors keep track of their health, remind them to take 
 How to setup Feelix?
 * Clone this Repo.
 * Make sure to install Yarn in your system: https://classic.yarnpkg.com/lang/en/docs/install/
-* Set up api keys in the .env file inside the backend folder.
+* Set up api keys in the .env file inside the backend folder for openai and elevenlabs.
+* In the backend, create a new `bin` folder, here download and unzip [Rhubarb]([url](https://github.com/DanielSWolf/rhubarb-lip-sync/releases)) . (for lip-sync animations)
 * Open 2 terminals, one pointing to the `frontend` and the other for `backend` folder
 * Run `yarn` on both terminals to install all dependencies.
-* Run `yarn dev` oon both terminals to launch backend and frontend servers.
+* Run `yarn dev` on both terminals to launch backend and frontend servers.
+* Have fun with Feelix!
 
