@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-// const backendUrl = "http://localhost:3001"; //local url
+const backendUrl = "http://localhost:3000"; //local url
 // const backendUrl = "https://feelix-backend-rho.vercel.app"; // prod url
-const backendUrl = "https://plankton-app-wrndz.ondigitalocean.app"; // prod url
+// const backendUrl = "https://plankton-app-wrndz.ondigitalocean.app"; // prod url
 
 
 const ChatContext = createContext();
